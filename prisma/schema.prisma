@@ -1,0 +1,22 @@
+// SQLite for simplicity. Switch to Postgres in production if needed.
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Wish {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  name      String
+  tone      String   @default("sweet")
+  emoji     String?  @default("🎉")
+  from      String? 
+  imageUrl  String?
+  notes     String?
+  content   String   // rendered/generated wish text
+  createdAt DateTime @default(now())
+}
