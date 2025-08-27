@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "french-skills",
+      name: "bugscreator-wishes",
       script: "node_modules/next/dist/bin/next",
       args: "start",
       instances: "max", // Or a number of instances
